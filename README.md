@@ -1,1 +1,1 @@
-# JSMin
+# JavaScript Minifier
