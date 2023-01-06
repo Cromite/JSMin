@@ -1,9 +1,9 @@
 # JSMin
-This repository contains a sample 'jsmin.c' for your use. This can be compiled with 'lib-jsmin.c' to create 'jsmin' ('jsmin.exe'), which can then be used as a console application.
+This repository contains a sample **main.c** for your use. This can be compiled with **lib-jsmin.c** to create **jsmin** (**jsmin.exe**), which can then be used as a console application.
 
 **Compilation example**
 ```
-gcc jsmin.c lib-jsmin.c -o jsmin
+gcc main.c lib-jsmin.c -o jsmin
 ```
 
 # Examples of use
@@ -28,15 +28,15 @@ var sample=100;log(sample);function log(num){if(num>50){console.log("examples of
 ```
 jsmin example.js
 ```
-When a file name is specified in the command line argument of jsmin, a file such as `example.min.js` is created in the same directory, and the compression result is output to this file.
+When a file name is specified in the command line argument of jsmin, a file such as **example.min.js** is created in the same directory, and the compression result is output to this file.
 ```
 jsmin input.js -o output.js
 ```
-You can also specify the destination file with the '-o' ('--output') option. You can also write `jsmin -o output.js input.js`.
+You can also specify the destination file with the **-o** (**--output**) option. You can also write `jsmin -o output.js input.js`.
 ```
 jsmin example.js -w
 ```
-In addition, the '-w' ('--overwerite') option will overwrite the original file without creating a new file.You can also write `jsmin -w example.js`
+In addition, the **-w** (**--overwerite**) option will overwrite the original file without creating a new file.You can also write `jsmin -w example.js`
 
 **Use the -h (--help) option to see how to use it**
 ```
@@ -80,5 +80,9 @@ int main() {
 
     return 0;
 }
+```
+**Compile**
+```
+gcc example.c lib-jsmin.c -o jsmin2
 ```
 
