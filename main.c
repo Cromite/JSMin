@@ -10,7 +10,7 @@
  */
 
 #include <stdio.h>
-#include "lib-jsmin.h" // <-- this
+#include "lib-jsmin.h"
 
 static int equal(char *string, char *sample) {
     int i = 0;
