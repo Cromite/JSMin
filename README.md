@@ -1,5 +1,5 @@
 # JSMin
-This repository contains the Windows application **jsmin.exe** and the **jsmin** library. If you just want to use the jsmin command, simply download jsmin.exe.
+This repository contains the Windows application **jsmin.exe** and the **lib-jsmin**. If you just want to use the jsmin command, simply download jsmin.exe.
 
 # jsmin
 This command erases extra whitespace and comments in the javascript code, making it one line and reducing the file size.
@@ -37,6 +37,9 @@ jsmin example.js -w
 ```
 In addition, the **-w** (**--overwerite**) option will overwrite the original file without creating a new file.You can also write `jsmin -w example.js`.
 
+```
+jsmin -h
+```
 Use the -h (--help) option to see how to use jsmin
 ```
 Usage: jsmin <file> [options...]
@@ -48,9 +51,9 @@ Options:
   -v, --version        show jsmin version
 ```
 
-# jsmin library
+# lib-jsmin
 ```c
-#include "jsmin/jsmin.h"
+#include "lib-jsmin/jsmin.h"
 
 char *jsmin(char *code)
 ```
@@ -61,11 +64,11 @@ char *jsmin(char *code)
 **Returns:**
 
 Minified javascript code
-### Example
+## Example
 ```
 Directory
  ├ example.c
- └ jsmin
+ └ lib-jsmin
     ├ jsmin.h
     └ jsmin.c
 ```
@@ -73,7 +76,7 @@ Directory
 // example.c
 
 #include <stdio.h>
-#include "jsmin/jsmin.h"
+#include "lib-jsmin/jsmin.h"
 
 int main() {
 
@@ -96,6 +99,6 @@ int main() {
 ```
 ### Compile
 ```
-gcc example.c jsmin/jsmin.c -o jsmin
+gcc example.c lib-jsmin/jsmin.c -o jsmin
 ```
 This console application minifies **example.js** by overwriting it.
