@@ -8,7 +8,7 @@ gcc jsmin.c jsmin/jsmin.c -o jsmin
 ## Jsmin Command
 This command erases extra whitespace and comments in the javascript code, making it one line and reducing the file size.
 
-**Before**
+### Before
 ```js
 var sample = 100
 log(sample)
@@ -20,7 +20,7 @@ function log(num) {
   } else num += 20
 }
 ```
-**After**
+### After
 ```js
 var sample=100;log(sample);function log(num){if(num>50){console.log("examples of use")}else num+=20}
 ```
