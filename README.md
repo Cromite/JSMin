@@ -49,7 +49,6 @@ Options:
   -v, --version        show jsmin version
 ```
 # Usage and customization examples of lib-jsmin.c
-### jsmin function
 ```c
 #include "lib-jsmin.h"
 
