@@ -53,7 +53,7 @@ Options:
 
 # lib-jsmin
 ```c
-#include "lib-jsmin/jsmin.h"
+#include "lib-jsmin.h"
 
 char *jsmin(char *code)
 ```
@@ -68,15 +68,14 @@ Minified javascript code
 ```
 Directory
  ├ example.c
- └ lib-jsmin
-    ├ jsmin.h
-    └ jsmin.c
+ ├ lib-jsmin.h
+ └ lib-jsmin.c
 ```
 ```c
 // example.c
 
 #include <stdio.h>
-#include "lib-jsmin/jsmin.h"
+#include "lib-jsmin.h"
 
 int main() {
 
@@ -99,6 +98,6 @@ int main() {
 ```
 ### Compile
 ```
-gcc example.c lib-jsmin/jsmin.c -o jsmin
+gcc example.c lib-jsmin.c -o jsmin
 ```
 This console application minifies **example.js** by overwriting it.
