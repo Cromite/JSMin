@@ -1,11 +1,9 @@
 # JSMin
 This repository contains a sample main.c for your use. This can be compiled with lib-jsmin.c to create 'jsmin' ('jsmin.exe'), which can then be used as a console application.
-
 **Compilation Example**
 ```
 gcc jsmin.c lib-jsmin.c -o jsmin
 ```
-
 # Examples of Use
 **Before**
 ```js
@@ -23,7 +21,6 @@ function log(num) {
 ```js
 var sample=100;log(sample);function log(num){if(num>50){console.log("examples of use")}else num+=20}
 ```
-
 # Usage
 ```
 jsmin example.js
@@ -37,7 +34,25 @@ You can also specify the destination file with the '-o' ('--output') option. You
 jsmin example.js -w
 ```
 In addition, the '-w' ('--overwerite') option will overwrite the original file without creating a new file.You can also write `jsmin -w example.js`
+
 **Use the -h (--help) option to see how to use it**
 ```
+Usage: jsmin <file> [options...]
 
+Options:
+  -o, --output <file>  write to <file> instead of writing in '...min.js'
+  -w, --overwrite      overwrite the file
+  -h, --help           get help for commands
+  -v, --version        show jsmin version
+```
+# How to use lib-jsmin.c
+**Example**
+```
+Directory
+ ├ lib-jsmin.c
+ ├ lib-jsmin.h
+ └ jsmin.c
+```
+```c
+include
 ```
