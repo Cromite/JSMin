@@ -3,7 +3,7 @@ This repository contains the Windows application **jsmin.exe** and the **jsmin**
 ## Compilation example
 For Windows, please add the extension **.exe**
 ```
-gcc jsmin.c jsmin/jsmin.c -o jsmin
+gcc jsmin.c lib/jsmin.c -o jsmin
 ```
 ## Command
 This command erases extra whitespace and comments in the javascript code, making it one line and reducing the file size.
@@ -57,7 +57,7 @@ Options:
 
 # Jsmin Library
 ```c
-#include "jsmin/jsmin.h"
+#include "lib/jsmin.h"
 
 char *jsmin(char *code)
 ```
@@ -72,7 +72,7 @@ Minified javascript code
 ```
 Directory
  ├ example.c
- └ jsmin
+ └ lib
     ├ jsmin.h
     └ jsmin.hc
 ```
@@ -80,7 +80,7 @@ Directory
 // example.c
 
 #include <stdio.h>
-#include "jsmin/jsmin.h"
+#include "lib/jsmin.h"
 
 int main() {
 
@@ -103,6 +103,6 @@ int main() {
 ```
 ### Compile
 ```
-gcc example.c jsmin/jsmin.c -o jsmin
+gcc example.c lib/jsmin.c -o jsmin
 ```
 This console application minifies **example.js** by overwriting it.
