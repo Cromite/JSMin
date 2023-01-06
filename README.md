@@ -1,4 +1,4 @@
-# JSin
+# JSmin
 This repository contains a sample **main.c** for your use. This can be compiled with **lib-jsmin.c** to create **jsmin** (**jsmin.exe**), which can then be used as a console application.
 
 ### Compilation example
