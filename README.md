@@ -1,7 +1,11 @@
 # JSMin
-This repository contains the Windows application **jsmin.exe** and the **lib-jsmin**. If you just want to use the jsmin command, simply download jsmin.exe.
-
-# Jsmin Command
+This repository contains the Windows application **jsmin.exe** and the **jsmin** library. If you just want to use the jsmin command, just download **jsmin.exe** or compile yourself.
+## Compilation example
+For Windows, please add the extension **.exe**
+```
+gcc jsmin.c jsmin/jsmin.c -o jsmin
+```
+## Jsmin Command
 This command erases extra whitespace and comments in the javascript code, making it one line and reducing the file size.
 
 **Before**
