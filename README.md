@@ -5,7 +5,7 @@ For Windows, please add the extension **.exe**
 ```
 gcc jsmin.c jsmin/jsmin.c -o jsmin
 ```
-## Jsmin Command
+## Command
 This command erases extra whitespace and comments in the javascript code, making it one line and reducing the file size.
 
 ### Before
