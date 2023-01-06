@@ -1,13 +1,13 @@
 # JSMin
 This repository contains a sample **main.c** for your use. This can be compiled with **lib-jsmin.c** to create **jsmin** (**jsmin.exe**), which can then be used as a console application.
 
-**Compilation example**
+### Compilation example
 ```
 gcc main.c lib-jsmin.c -o jsmin
 ```
 
 # Examples of use
-**Before**
+### Before
 ```js
 var sample = 100
 log(sample)
@@ -19,7 +19,7 @@ function log(num) {
   } else num += 20
 }
 ```
-**After**
+### After
 ```js
 var sample=100;log(sample);function log(num){if(num>50){console.log("examples of use")}else num+=20}
 ```
@@ -38,7 +38,7 @@ jsmin example.js -w
 ```
 In addition, the **-w** (**--overwerite**) option will overwrite the original file without creating a new file.You can also write `jsmin -w example.js`
 
-**Use the -h (--help) option to see how to use it**
+### Use the -h (--help) option to see how to use it
 ```
 Usage: jsmin <file> [options...]
 
@@ -49,7 +49,20 @@ Options:
   -v, --version        show jsmin version
 ```
 # Usage and customization examples of lib-jsmin.c
-**Example**
+### jsmin function
+```c
+#include "lib-jsmin.h"
+
+char *jsmin(char *code)
+```
+**Parameters:**
+
+`code` - Original javascript code
+
+**Returns:**
+
+Minified javascript code
+### Example
 ```
 Directory
  ├ lib-jsmin.c
@@ -81,8 +94,8 @@ int main() {
     return 0;
 }
 ```
-**Compile**
+### Compile
 ```
 gcc example.c lib-jsmin.c -o jsmin2
 ```
-
+This console application minifies 'example.js' by overwriting it.
