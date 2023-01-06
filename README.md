@@ -96,6 +96,6 @@ int main() {
 ```
 ### Compile
 ```
-gcc example.c lib-jsmin.c -o jsmin2
+gcc example.c lib-jsmin.c -o jsmin
 ```
 This console application minifies 'example.js' by overwriting it.
