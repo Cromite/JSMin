@@ -1,5 +1,5 @@
 # JSMin
-This repository contains the Windows application **jsmin.exe** and the **jsmin** library. If you just want to use the jsmin command, just download **jsmin.exe** or compile yourself.
+This repository contains the Windows application **jsmin.exe** and the **jsmin** function. If you just want to use the jsmin command, just download **jsmin.exe** or compile yourself.
 ## Compilation example
 For Windows, please add the extension **.exe**
 ```
@@ -55,7 +55,7 @@ Options:
   -v, --version        show jsmin version
 ```
 
-# Jsmin Library
+# Jsmin function
 ```c
 #include "lib/jsmin.h"
 
