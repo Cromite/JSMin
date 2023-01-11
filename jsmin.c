@@ -1,5 +1,5 @@
 /**
- * jsmin v2.1.3
+ * jsmin v2.1.5
  *
  * Copyright (C) 2023 Cromite.
  * Released under the MIT license.
@@ -10,7 +10,12 @@
  */
 
 #include <stdio.h>
-#include "jsmin/jsmin.h"
+#include "lib/jsmin.h"
+
+char* input = NULL;
+char* output = NULL;
+int mode = 0;
+int overwrite = 0;
 
 static int equal(char *string, char *sample) {
     int i = 0;
@@ -22,12 +27,6 @@ static int equal(char *string, char *sample) {
 }
 
 int main(int argc, char *argv[]) {
-
-    char* input = NULL;
-    char* output = NULL;
-    int mode = 0;
-    int overwrite = 0;
-
     // options
     if (argc > 0)
     for (int i = 1; i < argc; i++) {
@@ -67,47 +66,50 @@ int main(int argc, char *argv[]) {
 
     switch (mode) {
         case 0:
-            if (input != NULL) {
+            if (input == NULL) {
+                printf("jsmin: no input file\n");
+                return 1;
+            }
+            if (output == NULL) {
                 if (overwrite) output = input;
-                else if (output == NULL) {
+                else {
                     char raw[30];
                     int i = 0;
-                    while (input[i] != '\0' && !(
+                    do raw[i] = input[i];
+                    while (input[i++] != '\0' && !(
                         input[i] == '.' &&
                         input[i+1] == 'j' &&
                         input[i+2] == 's'
-                    )) {raw[i] = input[i]; i++;}
+                    ));
                     char min[] = ".min.js";
                     int m = 0;
-                    while (min[m] != '\0') {
-                        raw[i+m] = min[m];
-                        m++;
-                    }
+                    do raw[i+m] = min[m];
+                    while (min[m++] != '\0');
                     output = raw;
                 }
-                FILE *fp;
+            }
+            FILE *fp;
 
-                // input file
-                fp = fopen(input, "r");
-                if( fp == NULL ) {
-                    printf("jsmin: no such file: '%s'\n", input);
-                    return 1;
-                }
-                char code[1048576];
-                int i = 0;
-                while((code[i] = fgetc(fp)) != EOF) i++;
-                fclose(fp);
-                code[i] = '\0';
+            // input file
+            fp = fopen(input, "r");
+            if( fp == NULL ) {
+                printf("jsmin: no such file: '%s'\n", input);
+                return 1;
+            }
+            char code[1048576];
+            int i = 0;
+            while((code[i] = fgetc(fp)) != EOF) i++;
+            fclose(fp);
+            code[i] = '\0';
 
-                // output file
-                fp = fopen(output, "w");
-                fputs(jsmin(code), fp);
-                fclose(fp);
-            } else printf("jsmin: no input file\n");
+            // output file
+            fp = fopen(output, "w");
+            fputs(jsmin(code), fp);
+            fclose(fp);
             break;
         case 1: 
             printf(
-                "jsmin 2.1.3\n"
+                "jsmin 2.1.5\n"
                 "Copyright (C) 2023 Cromite.\n"
                 "Release-Date: 2023-1-6\n"
                 "Bug reports to <admin@cromite.net>\n");
